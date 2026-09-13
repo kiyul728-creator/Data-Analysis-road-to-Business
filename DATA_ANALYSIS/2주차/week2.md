@@ -38,17 +38,16 @@ https://www.youtube.com/watch?v=Il6L8OtNFpc&list=PLVsNizTWUw7FGzSRCkQrPEEe-ljVXg
 
 ## 01. API 사용하기
 
-<!-- 새롭게 배운 내용을 자유롭게 정리해주세요.-->
+API는 프로그램끼리 데이터를 주고받기 위해 정해 놓은 규칙이다. 공개 API를 이용하면 필요한 데이터를 직접 반복해서 다운로드하지 않고, 파이썬으로 데이터 수집 과정을 자동화할 수 있음을 배웠다.
 
 ## 02.웹 스크래핑 사용하기
 
-<!-- 새롭게 배운 내용을 자유롭게 정리해주세요.-->
+웹 스크래핑은 웹 페이지의 HTML에서 필요한 정보를 추출하는 기법이다. requests로 HTML을 요청해 받아오고, BeautifulSoup를 이용해 원하는 데이터를 탐색하고 추출할 수 있다는 것을 배웠다.
 
 
 # 2️⃣ 수행 인증
 
-<!-- 교재에서 안내된 과정을 직접 실행해본 뒤, 진행 결과가 보이도록 4~6장의 스크린샷을 캡처하여 아래에 첨부해주세요.-->
-
+![alt text](<스크린샷 2026-09-13 213640.png>) ![alt text](<스크린샷 2026-09-13 213503.png>) ![alt text](<스크린샷 2026-09-13 213516.png>) ![alt text](<스크린샷 2026-09-13 213540.png>) ![alt text](<스크린샷 2026-09-13 213553.png>) ![alt text](<스크린샷 2026-09-13 213606.png>)
 
 
 <br>
@@ -68,7 +67,7 @@ https://www.youtube.com/watch?v=Il6L8OtNFpc&list=PLVsNizTWUw7FGzSRCkQrPEEe-ljVXg
 ```
 
 ```
-여기에 선택한 답과 그 이유를 간단히 서술해주세요!
+Scrapy : 책에서 BeautifulSoup 외에도 웹 스크래핑에 사용할 수 있는 패키지로 Scrapy를 소개하고 있다. Scrapy는 requests와 BeautifulSoupdm의 기능을 합쳐 놓은 것과 비슷한 스크래핑 패키지라고 해서 Scrapy를 선택했다.
 ```
 
 
