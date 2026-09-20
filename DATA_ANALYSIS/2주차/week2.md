@@ -47,7 +47,7 @@ API는 프로그램끼리 데이터를 주고받기 위해 정해 놓은 규칙�
 
 # 2️⃣ 수행 인증
 
-![alt text](<스크린샷 2026-09-13 213503.png>)![alt text](<스크린샷 2026-09-13 213516.png>)![alt text](<스크린샷 2026-09-13 213540.png>)![alt text](<스크린샷 2026-09-13 213553.png>)![alt text](<스크린샷 2026-09-13 213606.png>)![alt text](<스크린샷 2026-09-13 213640.png>)
+![alt text](<week2_iamge/스크린샷 2026-09-13 213503.png>) ![alt text](<week2_iamge/스크린샷 2026-09-13 213516.png>) ![alt text](<week2_iamge/스크린샷 2026-09-13 213540.png>) ![alt text](<week2_iamge/스크린샷 2026-09-13 213553.png>) ![alt text](<week2_iamge/스크린샷 2026-09-13 213606.png>) ![alt text](<week2_iamge/스크린샷 2026-09-13 213640.png>)
 
 
 <br>
