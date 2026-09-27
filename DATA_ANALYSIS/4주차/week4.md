@@ -55,8 +55,7 @@ describe() 메서드를 사용하면 데이터의 개수, 평균, 표준편차, 
 
 # 2️⃣ 수행 인증
 
-![alt text](<week3_image/스크린샷 2026-09-27 194348.png>) ![alt text](<week3_image/스크린샷 2026-09-27 194401.png>) ![alt text](<week3_image/스크린샷 2026-09-27 194414.png>)
-
+![alt text](<week4_image/스크린샷 2026-09-27 194348.png>) ![alt text](<week4_image/스크린샷 2026-09-27 194401.png>) ![alt text](<week4_image/스크린샷 2026-09-27 194414.png>)
 
 <br>
 <br>
