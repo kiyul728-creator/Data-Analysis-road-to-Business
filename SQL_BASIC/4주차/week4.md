@@ -75,7 +75,13 @@ SQL_BASIC 정규 과제는 매주 정해진 분량의 `초보자를 위한 BigQu
 개념 설명: 자료 타입을 변경하는 함수이다 예를들어 문자열 "1 2 3" 을 정수형 " 1 2 3 "으로 바꿀 수 있다.
 예시 쿼리:
 SELECT
-    CAST(""김기열" AS INT64)
+    CAST(1 AS STRING) 
+=> 숫자 1을 문자 1로 변경
+
+SELECT 
+    CAST("김기열" AS INT64)
+=> 김기열은 숫자로 변경하려고 해도 불가능
+
 ```
 
 ## 02.
@@ -86,13 +92,14 @@ SELECT
 예시 쿼리:
 SELECT
     SAFE_CAST(""김기열" AS INT64)
+=> 변환 실패로 NULL값 반환
 ```
 
 ## (선택) 03.
 
 ```
-개념 이름:
-개념 설명:
+개념 이름: ctrl + / 
+개념 설명: 주석처리
 헷갈린 점:
 ```
 
@@ -100,7 +107,7 @@ SELECT
 
 # 2️⃣ 수행 인증란
 
-![alt text](week4_image/스크린샷(769).png) ![alt text](week4_image/스크린샷(770).png) ![alt text](week4_image/스크린샷(778).png) ![alt text](week4_image/스크린샷(779).png) ![alt text](week4_image/스크린샷(780).png)
+![alt text](week4_image/스크린샷(769).png) ![alt text](week4_image/스크린샷(770).png) ![alt text](week4_image/스크린샷(778).png) ![alt text](week4_image/스크린샷(779).png) ![alt text](week4_image/스크린샷(780).png) ![alt text](week4_image/스크린샷(788).png) ![alt text](week4_image/스크린샷(789).png) ![alt text](week4_image/스크린샷(790).png) ![alt text](week4_image/스크린샷(791).png) ![alt text](week4_image/스크린샷(792).png) ![alt text](week4_image/스크린샷(793).png) ![alt text](week4_image/스크린샷(794).png) ![alt text](week4_image/스크린샷(811).png) ![alt text](week4_image/스크린샷(813).png) ![alt text](week4_image/스크린샷(814).png) ![alt text](week4_image/스크린샷(815).png) ![alt text](week4_image/스크린샷(816).png) ![alt text](week4_image/스크린샷(817).png)
 
 ---
 
@@ -190,7 +197,7 @@ ORDER BY CATEGORY ASC;
 
 # 4️⃣ 이번 주 회고
 
-```
+```sql
 1. 쿼리 작성 흐름을 잡을 때 도움이 된 방법:  
 #쿼리를작성하는목표,확인할지표: 
 #쿼리계산방법:
@@ -198,20 +205,24 @@ ORDER BY CATEGORY ASC;
 #사용할테이블: 
 #JoinKEY:
 #데이터특징: 
-SELECT
+SELECT  
 
 FROM 
 WHERE
 
 이렇게 espanso를 이용해서 흐름을 생각하고 쿼리 작성 흐름을 잡으니까 쿼리 흐름을 잡기가 더 수월했다
 
-2. 타입 변환이나 문자열 처리에서 조심해야 할 점:문자열을 숫자로 바꿀 때 변환 가능한 값인지 확인해야 한다. 문자열 검색에서는 %의 위치에 따라 검색 결과가 달라지므로 주의해야 한다.
+2. WHERE 열이름 LIKE '%XX%'
 
+=> 해당 열의 값에 문자열 XX가 포함된 행을 찾는다
 
-3. 앞으로 문제 풀이 때 먼저 확인할 것: 어떤 열을 출력해야 하는지, 어떤 조건으로 데이터를 골라야 하는지, 정렬 기준이 무엇인지 먼저 확인하겠다.
+여기서 %는 문자가 0개 이상 있는 경우를 뜻해요. 공백뿐 아니라 글자, 숫자 등도 포함합니다.
+- 'XX' → 일치
+- 'abcXX123' → 일치
+- ' XX ' → 일치
+- 'X X' → 불일치 (XX가 붙어 있지 않음)
+
 ```
 
 수고하셨습니다!
-
-
 
