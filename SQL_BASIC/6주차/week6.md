@@ -113,7 +113,7 @@ ON tp.trainer_id = t.id ;
 
 아래 중 하나 이상을 첨부해주세요.
 
-![alt text](스크린샷(1076).png) ![alt text](스크린샷(1077).png) ![alt text](스크린샷(1078).png) ![alt text](스크린샷(1079).png) ![alt text](스크린샷(1080).png) ![alt text](스크린샷(1081).png) ![alt text](스크린샷(1082).png) ![alt text](스크린샷(1083).png) ![alt text](스크린샷(1084).png) ![alt text](스크린샷(1085).png) ![alt text](스크린샷(1086).png) ![alt text](스크린샷(1087).png) ![alt text](스크린샷(1088).png) ![alt text](스크린샷(1089).png) ![alt text](스크린샷(1090).png) ![alt text](스크린샷(1091).png) ![alt text](스크린샷(1092).png)
+![alt text](week6_image/스크린샷(1076).png) ![alt text](week6_image/스크린샷(1077).png) ![alt text](week6_image/스크린샷(1078).png) ![alt text](week6_image/스크린샷(1079).png) ![alt text](week6_image/스크린샷(1080).png) ![alt text](week6_image/스크린샷(1081).png) ![alt text](week6_image/스크린샷(1082).png) ![alt text](week6_image/스크린샷(1083).png) ![alt text](week6_image/스크린샷(1084).png) ![alt text](week6_image/스크린샷(1085).png) ![alt text](week6_image/스크린샷(1086).png) ![alt text](week6_image/스크린샷(1087).png) ![alt text](week6_image/스크린샷(1088).png) ![alt text](week6_image/스크린샷(1089).png) ![alt text](week6_image/스크린샷(1090).png) ![alt text](week6_image/스크린샷(1091).png) ![alt text](week6_image/스크린샷(1092).png)
 
 ---
 
@@ -126,57 +126,104 @@ ON tp.trainer_id = t.id ;
 문제 링크: [조건에 맞는 도서와 저자 리스트 출력하기](https://school.programmers.co.kr/learn/courses/30/lessons/144854)
 
 풀이 과정:
+```sql
+SELECT
+    B.BOOK_ID,
+    A.AUTHOR_NAME,
+    B.PUBLISHED_DATE
+FROM BOOK AS B
+INNER JOIN AUTHOR AS A
+    ON B.AUTHOR_ID = A.AUTHOR_ID
+WHERE B.CATEGORY = '경제'
+ORDER BY B.PUBLISHED_DATE ASC;
+```
 
 ```
-- 사용한 테이블:
-- JOIN key:
-- 날짜를 출력한 형식:
+- 사용한 테이블: BOOK 테이블과 AUTHOR 테이블
+- JOIN key: AUTHOR_ID
+- 날짜를 출력한 형식: SELECT로 BOOK TABEL에서 PUBLUSHED_DATE 선택
 ```
 
-<!-- 정답을 맞추게 되면, 정답입니다. 이 부분을 캡처해서 이 주석을 지우시고 첨부해주시면 됩니다. -->
+![alt text](<week6_image/스크린샷 2026-11-01 182736.png>)
 
 ## 🧩 문제 2
 
 문제 링크: [상품 별 오프라인 매출 구하기](https://school.programmers.co.kr/learn/courses/30/lessons/131533)
 
 풀이 과정:
+```SQL
+SELECT
+    P.PRODUCT_CODE,
+    SUM(P.PRICE * O.SALES_AMOUNT) AS SALES
+FROM PRODUCT AS P
+LEFT JOIN OFFLINE_SALE AS O
+    ON P.PRODUCT_ID = O.PRODUCT_ID
+GROUP BY P.PRODUCT_CODE
+ORDER BY SALES DESC, P.PRODUCT_CODE ASC;
+```
 
 ```
-- 연결한 테이블:
-- JOIN key:
-- 집계한 값:
+- 연결한 테이블: PRODUCT 테이블과 OFFLINE SALE 테이블
+- JOIN key: PRODUCT_ID
+- 집계한 값: P * Q로 각 상품별 매출액 집계
+C3000002	126000
+A1000011	90000
+A1000045	16000
+
 ```
 
-<!-- 정답을 맞추게 되면, 정답입니다. 이 부분을 캡처해서 이 주석을 지우시고 첨부해주시면 됩니다. -->
+![alt text](<week6_image/스크린샷 2026-11-01 184257.png>)
 
 ## 🧩 문제 3
 
 문제 링크: [없어진 기록 찾기](https://school.programmers.co.kr/learn/courses/30/lessons/59042)
 
 풀이 과정:
+```sql
+SELECT
+    O.ANIMAL_ID,
+    O.NAME
+FROM ANIMAL_OUTS AS O
+LEFT JOIN ANIMAL_INS AS I
+    ON O.ANIMAL_ID = I.ANIMAL_ID
+WHERE I.ANIMAL_ID IS NULL
+ORDER BY O.ANIMAL_ID ASC;
+```
 
 ```
-- 기준이 되는 왼쪽 테이블:
-- LEFT JOIN이 필요한 이유:
-- NULL이 발생하는 경우:
+- 기준이 되는 왼쪽 테이블: ANIMAL_OUTS
+- LEFT JOIN이 필요한 이유: 이 문제는 입양을 보내서 입양 테이블상 데이터는 존재하는데 입소기록이 없는 동물을 찾는 문제이다. 따라서 입양테이블을 기준으로 LEFT JOIN을 하면
+입소기록이 소실된 동물을 찾을 수 있다
+- NULL이 발생하는 경우: 입양 테이블에는 데이터가 있지만 입소 테이블에는 없는 경우
+-추가 :WHERE에서 사용한 컬럼이라고 해서 반드시 SELECT에 포함해야 하는 것은 아니다, 조건을 검사하는 컬럼과 최종 출력하는 컬럼은 서로 달라도 된다.
 ```
 
-<!-- 정답을 맞추게 되면, 정답입니다. 이 부분을 캡처해서 이 주석을 지우시고 첨부해주시면 됩니다. -->
+![alt text](<week6_image/스크린샷 2026-11-01 190813.png>)
 
 ## 🧩 문제 4
 
 문제 링크: [있었는데요 없었습니다](https://school.programmers.co.kr/learn/courses/30/lessons/59043)
 
 풀이 과정:
+```sql
+SELECT
+    I.ANIMAL_ID,
+    I.NAME
+FROM ANIMAL_INS AS I
+INNER JOIN ANIMAL_OUTS AS O
+    ON I.ANIMAL_ID = O.ANIMAL_ID
+WHERE O.DATETIME < I.DATETIME
+ORDER BY I.DATETIME ASC;
+```
 
 ```
-- 사용한 테이블:
-- JOIN key:
-- 비교한 날짜 컬럼:
-- 정렬 기준:
+- 사용한 테이블: ANIMAL_INS 테이블, ANIMAL_OUTS 테이블
+- JOIN key: ANIMAL_ID
+- 비교한 날짜 컬럼: INS테이블의 DATETIME과 OUTS테이블의 DATETIME
+- 정렬 기준:DATETIME 입소일이 빠른날짜 기준으로 정렬한다
 ```
 
-<!-- 정답을 맞추게 되면, 정답입니다. 이 부분을 캡처해서 이 주석을 지우시고 첨부해주시면 됩니다. -->
+![alt text](<week6_image/스크린샷 2026-11-01 222914.png>)
 
 ---
 
